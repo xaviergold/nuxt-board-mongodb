@@ -651,7 +651,8 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {}
+  "public": {},
+  "mongodbUri": "mongodb+srv://admin:12345@cluster0.k4k4w.mongodb.net/?appName=Cluster0"
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -2268,9 +2269,9 @@ const connectDB = async () => {
   if (isConnected) {
     return;
   }
-  const mongodbUri = process.env.MONGODB_URI;
+  const config = useRuntimeConfig();
   try {
-    await mongoose.connect(mongodbUri, {
+    await mongoose.connect(config.mongodbUri, {
       dbName: "nuxt-board"
     });
     isConnected = true;
