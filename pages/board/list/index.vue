@@ -36,12 +36,12 @@
             <td>{{ board.rownum }}</td>
             <td>{{ board.writer }}</td>
             <td class="title-cell">
-              <a @click="goToView(board._id)" class="title-link">
+              <NuxtLink :to="`/board/view/${board._id}`" class="title-link">
                 {{ board.title }}
-              </a>
+              </NuxtLink>
             </td>
             <td>{{ board.hitno }}</td>
-            <td>{{ formatDate(board.regDate) }}</td>
+            <td>{{ formatDate(board.regdate) }}</td>
           </tr>
         </tbody>
       </table>
@@ -132,7 +132,7 @@ const currentPage = computed(() => {
 const { data, pending, error, refresh } = await useFetch('/api/boards', {
   query: {
     page: currentPage,
-    limit: 10
+    limit: 5
   },
   watch: [currentPage]
 });
@@ -143,11 +143,6 @@ const goToPage = (page) => {
 
 const goToWrite = () => {
   router.push('/board/write');
-};
-
-const goToView = (id) => {
-  //console.log('클릭한 id:', id)
-  router.push(`/board/${id}`);
 };
 
 const handleLogout = async () => {

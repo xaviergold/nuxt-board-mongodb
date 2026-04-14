@@ -3,44 +3,44 @@ import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getCookie, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, setCookie, deleteCookie, getResponseStatusText } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/h3/dist/index.mjs';
-import { escapeHtml } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/@vue/shared/dist/shared.cjs.js';
-import bcrypt from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/bcryptjs/index.js';
-import mongoose from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/mongoose/index.js';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/ufo/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getCookie, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, setCookie, deleteCookie, getResponseStatusText } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/h3/dist/index.mjs';
+import { escapeHtml } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/@vue/shared/dist/shared.cjs.js';
+import bcrypt from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/bcryptjs/index.js';
+import mongoose from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/mongoose/index.js';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/ufo/dist/index.mjs';
 import process$1 from 'node:process';
-import { renderToString } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/vue/server-renderer/index.mjs';
-import { klona } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/defu/dist/defu.mjs';
-import destr, { destr as destr$1 } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/destr/dist/index.mjs';
-import { snakeCase } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/scule/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/unhead/dist/server.mjs';
-import { stringify, uneval } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/devalue/index.js';
-import { isVNode, toValue, isRef } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/vue/index.mjs';
-import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/unhead/dist/plugins.mjs';
-import { createHooks } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/ohash/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/radix3/dist/index.mjs';
+import { renderToString } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/vue/server-renderer/index.mjs';
+import { klona } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/defu/dist/defu.mjs';
+import destr, { destr as destr$1 } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/destr/dist/index.mjs';
+import { snakeCase } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/scule/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/unhead/dist/server.mjs';
+import { stringify, uneval } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/devalue/index.js';
+import { isVNode, toValue, isRef } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/vue/index.mjs';
+import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/unhead/dist/plugins.mjs';
+import { createHooks } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/unstorage/drivers/fs.mjs';
+import { digest } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/ohash/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/youch-core/build/index.js';
-import { Youch } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/source-map/source-map.js';
+import consola, { consola as consola$1 } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/youch-core/build/index.js';
+import { Youch } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/source-map/source-map.js';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { getContext } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/unctx/dist/index.mjs';
-import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/errx/dist/index.js';
+import { getContext } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/unctx/dist/index.mjs';
+import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/errx/dist/index.js';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1 } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/pathe/dist/index.mjs';
-import jwt from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/jsonwebtoken/index.js';
-import { walkResolver } from 'file://C:/MySource/vue/nuxt-board-mongodb/node_modules/unhead/dist/utils.mjs';
+import { dirname as dirname$1, resolve as resolve$1 } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/pathe/dist/index.mjs';
+import jwt from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/jsonwebtoken/index.js';
+import { walkResolver } from 'file://C:/MySource/Vue/nuxt-board-mongodb/node_modules/unhead/dist/utils.mjs';
 
-const serverAssets = [{"baseName":"server","dir":"C:/MySource/vue/nuxt-board-mongodb/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/MySource/Vue/nuxt-board-mongodb/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -52,11 +52,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets$1);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/MySource/vue/nuxt-board-mongodb","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/MySource/vue/nuxt-board-mongodb/server","watchOptions":{"ignored":[null]}}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/MySource/vue/nuxt-board-mongodb/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/MySource/vue/nuxt-board-mongodb/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/MySource/vue/nuxt-board-mongodb/.data/kv"}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/MySource/Vue/nuxt-board-mongodb","watchOptions":{"ignored":[null]}}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/MySource/Vue/nuxt-board-mongodb/server","watchOptions":{"ignored":[null]}}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/MySource/Vue/nuxt-board-mongodb/.nuxt"}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/MySource/Vue/nuxt-board-mongodb/.nuxt/cache"}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/MySource/Vue/nuxt-board-mongodb/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -651,8 +651,7 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {},
-  "mongodbUri": "mongodb+srv://admin:12345@cluster0.k4k4w.mongodb.net/?appName=Cluster0"
+  "public": {}
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -1356,13 +1355,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _ZBj1SDesiTur_MI3M8FFRz8ZGhg8Q0evoRAdy_szo = (function(nitro) {
+const _YEHppty5Td_lpdwy_TlxTIXSDt5rH5Kc6cLpi97GirU = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
-const rootDir = "C:/MySource/vue/nuxt-board-mongodb";
+const rootDir = "C:/MySource/Vue/nuxt-board-mongodb";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -1381,7 +1380,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _3UHOTJ0i8M1XjoJj33JILfXrVEukQ6vf9xUXPqiigQ = (nitroApp) => {
+const _i3nO2KWSEsE8eyaJ4rLN_wxeTAxw5utHFWPBnaTaxik = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -1451,8 +1450,8 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-  _ZBj1SDesiTur_MI3M8FFRz8ZGhg8Q0evoRAdy_szo,
-_3UHOTJ0i8M1XjoJj33JILfXrVEukQ6vf9xUXPqiigQ
+  _YEHppty5Td_lpdwy_TlxTIXSDt5rH5Kc6cLpi97GirU,
+_i3nO2KWSEsE8eyaJ4rLN_wxeTAxw5utHFWPBnaTaxik
 ];
 
 const assets = {};
@@ -1480,7 +1479,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _DVjzxf = eventHandler((event) => {
+const _Wdc5LY = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -1544,7 +1543,7 @@ const _DVjzxf = eventHandler((event) => {
   return readAsset(id);
 });
 
-const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
+const JWT_SECRET = process.env.JWT_SECRET;
 const generateToken = (payload) => {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: "24h" });
 };
@@ -1556,7 +1555,7 @@ const verifyToken = (token) => {
   }
 };
 
-const _uryagm = defineEventHandler((event) => {
+const _GLxAhi = defineEventHandler((event) => {
   const url = getRequestURL(event).pathname;
   const publicPaths = [
     "/api/auth/login",
@@ -1661,8 +1660,8 @@ function publicAssetsURL(...path) {
 
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
-const getServerEntry = () => import('file://C:/MySource/vue/nuxt-board-mongodb/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
-const getClientManifest = () => import('file://C:/MySource/vue/nuxt-board-mongodb/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file://C:/MySource/Vue/nuxt-board-mongodb/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file://C:/MySource/Vue/nuxt-board-mongodb/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getSSRRenderer = lazyCachedFunction(async () => {
   const createSSRApp = await getServerEntry();
   if (!createSSRApp) {
@@ -1908,32 +1907,32 @@ async function getIslandContext(event) {
   return ctx;
 }
 
-const _lazy_S1SZqz = () => Promise.resolve().then(function () { return login_post$1; });
-const _lazy_aL50bm = () => Promise.resolve().then(function () { return logout_post$1; });
-const _lazy_Qp3Zau = () => Promise.resolve().then(function () { return register_post$1; });
-const _lazy_EMCfmS = () => Promise.resolve().then(function () { return _id__delete$1; });
-const _lazy_9zcoQB = () => Promise.resolve().then(function () { return _id__get$1; });
-const _lazy_pxYUzv = () => Promise.resolve().then(function () { return _id__put$1; });
-const _lazy_5t3vGJ = () => Promise.resolve().then(function () { return create_post$1; });
-const _lazy_bJACpH = () => Promise.resolve().then(function () { return boards$1; });
-const _lazy_jCcAXZ = () => Promise.resolve().then(function () { return connectionTest$1; });
-const _lazy_pWNqsy = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_K7QKTJ = () => Promise.resolve().then(function () { return login_post$1; });
+const _lazy_opVKAy = () => Promise.resolve().then(function () { return logout_post$1; });
+const _lazy_vBgDEl = () => Promise.resolve().then(function () { return register_post$1; });
+const _lazy_saNLGI = () => Promise.resolve().then(function () { return _id__delete$1; });
+const _lazy_00yLwj = () => Promise.resolve().then(function () { return _id__get$1; });
+const _lazy_6Zl2X8 = () => Promise.resolve().then(function () { return _id__put$1; });
+const _lazy_74MVxI = () => Promise.resolve().then(function () { return create_post$1; });
+const _lazy_DZzoB8 = () => Promise.resolve().then(function () { return boards$1; });
+const _lazy_1Bd9ad = () => Promise.resolve().then(function () { return connectionTest$1; });
+const _lazy_fGkZ6N = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '', handler: _DVjzxf, lazy: false, middleware: true, method: undefined },
-  { route: '', handler: _uryagm, lazy: false, middleware: true, method: undefined },
-  { route: '/api/auth/login', handler: _lazy_S1SZqz, lazy: true, middleware: false, method: "post" },
-  { route: '/api/auth/logout', handler: _lazy_aL50bm, lazy: true, middleware: false, method: "post" },
-  { route: '/api/auth/register', handler: _lazy_Qp3Zau, lazy: true, middleware: false, method: "post" },
-  { route: '/api/board/:id', handler: _lazy_EMCfmS, lazy: true, middleware: false, method: "delete" },
-  { route: '/api/board/:id', handler: _lazy_9zcoQB, lazy: true, middleware: false, method: "get" },
-  { route: '/api/board/:id', handler: _lazy_pxYUzv, lazy: true, middleware: false, method: "put" },
-  { route: '/api/board/create', handler: _lazy_5t3vGJ, lazy: true, middleware: false, method: "post" },
-  { route: '/api/boards', handler: _lazy_bJACpH, lazy: true, middleware: false, method: undefined },
-  { route: '/api/connectionTest', handler: _lazy_jCcAXZ, lazy: true, middleware: false, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_pWNqsy, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _Wdc5LY, lazy: false, middleware: true, method: undefined },
+  { route: '', handler: _GLxAhi, lazy: false, middleware: true, method: undefined },
+  { route: '/api/auth/login', handler: _lazy_K7QKTJ, lazy: true, middleware: false, method: "post" },
+  { route: '/api/auth/logout', handler: _lazy_opVKAy, lazy: true, middleware: false, method: "post" },
+  { route: '/api/auth/register', handler: _lazy_vBgDEl, lazy: true, middleware: false, method: "post" },
+  { route: '/api/board/:id', handler: _lazy_saNLGI, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/board/:id', handler: _lazy_00yLwj, lazy: true, middleware: false, method: "get" },
+  { route: '/api/board/:id', handler: _lazy_6Zl2X8, lazy: true, middleware: false, method: "put" },
+  { route: '/api/board/create', handler: _lazy_74MVxI, lazy: true, middleware: false, method: "post" },
+  { route: '/api/boards', handler: _lazy_DZzoB8, lazy: true, middleware: false, method: undefined },
+  { route: '/api/connectionTest', handler: _lazy_1Bd9ad, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_fGkZ6N, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_pWNqsy, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_fGkZ6N, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -2269,9 +2268,9 @@ const connectDB = async () => {
   if (isConnected) {
     return;
   }
-  const config = useRuntimeConfig();
+  const mongodbUri = process.env.MONGODB_URI;
   try {
-    await mongoose.connect(config.mongodbUri, {
+    await mongoose.connect(mongodbUri, {
       dbName: "nuxt-board"
     });
     isConnected = true;
@@ -2309,14 +2308,14 @@ const login_post = defineEventHandler(async (event) => {
     if (!user) {
       return {
         success: false,
-        error: "\uC544\uC774\uB514 \uB610\uB294 \uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+        error: "\uC544\uC774\uB514\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
       };
     }
     const isValid = await bcrypt.compare(body.password, user.password);
     if (!isValid) {
       return {
         success: false,
-        error: "\uC544\uC774\uB514 \uB610\uB294 \uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+        error: "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
       };
     }
     const token = generateToken({
@@ -2325,7 +2324,7 @@ const login_post = defineEventHandler(async (event) => {
     });
     setCookie(event, "auth_token", token, {
       httpOnly: false,
-      secure: false,
+      //secure: "development" === 'production',
       maxAge: 60 * 60 * 24,
       path: "/"
     });
@@ -2487,8 +2486,8 @@ const _id__get = defineEventHandler(async (event) => {
         error: "\uAC8C\uC2DC\uBB3C\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
       };
     }
-    const prev = await Board.findOne({ regdate: { $lt: board.regdate } }).sort({ regdate: -1 }).select("_id title");
-    const next = await Board.findOne({ regdate: { $gt: board.regdate } }).sort({ regdate: 1 }).select("_id title");
+    const prev = await Board.findOne({ regdate: { $lt: board.regdate } }).sort({ regdate: -1 }).select("_id");
+    const next = await Board.findOne({ regdate: { $gt: board.regdate } }).sort({ regdate: 1 }).select("_id");
     return {
       success: true,
       data: board,
@@ -2590,7 +2589,7 @@ const boards = defineEventHandler(async (event) => {
   try {
     const query = getQuery$1(event);
     const page = parseInt(query.page) || 1;
-    const limit = parseInt(query.limit) || 10;
+    const limit = parseInt(query.limit) || 5;
     const skip = (page - 1) * limit;
     await connectDB();
     const totalCount = await Board.countDocuments();

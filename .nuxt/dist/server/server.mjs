@@ -1,1 +1,1 @@
-export { default } from "file:///C:/MySource/vue/nuxt-board-mongodb/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///C:/MySource/Vue/nuxt-board-mongodb/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

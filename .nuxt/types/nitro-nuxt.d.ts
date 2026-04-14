@@ -1,7 +1,7 @@
 
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
-/// <reference types="C:/MySource/vue/nuxt-board-mongodb/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference types="C:/MySource/Vue/nuxt-board-mongodb/node_modules/@nuxt/nitro-server/dist/index.mjs" />
 /// <reference path="nitro-middleware.d.ts" />
 /// <reference path="./schema.d.ts" />
 

@@ -18,11 +18,12 @@ export default defineEventHandler(async (event) => {
     
     // 사용자 조회
     const user = await User.findById(body.userid)
+    //select * from User whete userid = 'kim';
     
     if (!user) {
       return {
         success: false,
-        error: '아이디 또는 비밀번호가 일치하지 않습니다.'
+        error: '아이디가 일치하지 않습니다.'
       }
     }
     
@@ -32,7 +33,7 @@ export default defineEventHandler(async (event) => {
     if (!isValid) {
       return {
         success: false,
-        error: '아이디 또는 비밀번호가 일치하지 않습니다.'
+        error: '비밀번호가 일치하지 않습니다.'
       }
     }
     
@@ -45,7 +46,7 @@ export default defineEventHandler(async (event) => {
     // 쿠키에 토큰 저장
     setCookie(event, 'auth_token', token, {
       httpOnly: false,
-      secure: process.env.NODE_ENV === 'production',
+      //secure: process.env.NODE_ENV === 'production',
       maxAge: 60 * 60 * 24,
       path: '/'
     })

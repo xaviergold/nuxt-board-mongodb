@@ -7,10 +7,12 @@ export const connectDB = async () => {
     return
   }
 
-  const config = useRuntimeConfig()
+  //. env에서 값을 읽어 옴
+  //const config = useRuntimeConfig()
+  const mongodbUri = process.env.MONGODB_URI
     
   try {
-    await mongoose.connect(config.mongodbUri, {
+    await mongoose.connect(mongodbUri, {
       dbName: 'nuxt-board'  
     })
     isConnected = true

@@ -34,7 +34,7 @@
         <div class="button-group">
           <button 
             v-if="data.prev" 
-            @click="goToPost(data.prev.bno)" 
+            @click="goToPost(data.prev._id)" 
             class="nav-btn"
           >
             ← 이전 게시물
@@ -47,7 +47,7 @@
           
           <button 
             v-if="data.next" 
-            @click="goToPost(data.next.bno)" 
+            @click="goToPost(data.next._id)" 
             class="nav-btn"
           >
             다음 게시물 →
@@ -217,7 +217,7 @@ const goToList = () => {
 };
 
 const goToPost = (bno) => {
-  router.push(`/board/${bno}`);
+  router.push(`/board/view/${bno}`);
 };
 
 const formatDate = (dateString) => {

@@ -3,6 +3,7 @@
     <div class="login-box">
       <h1>로그인</h1>
       
+      <!-- submit 이벤트 핸들러인 handleLogin으로 로그인 처리-->
       <form @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="userid">아이디</label>
@@ -46,8 +47,8 @@
 </template>
 
 <script setup>
-definePageMeta({
-  layout: false,
+definePageMeta({ 
+  //layout: false,
   //middleware: 'auth'  // 미들웨어 적용
 });
 
@@ -56,7 +57,7 @@ const router = useRouter();
 
 // 이미 로그인되어 있으면 게시판으로 리다이렉트
 onMounted(() => {
-  const token = useCookie('auth_token');
+  const token = useCookie('auth_token'); //
   if (token.value) {
     router.push('/board/list');
   }
@@ -82,6 +83,7 @@ const handleLogin = async () => {
       body: formData.value
     });
     
+    //로그인 성공하였으면 게시판 리스트 화면으로 이동
     if (response.success) {
       router.push('/board/list');
     } else {

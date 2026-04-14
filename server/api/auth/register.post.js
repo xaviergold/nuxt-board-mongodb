@@ -2,6 +2,7 @@ import bcrypt from 'bcryptjs'
 import { connectDB } from '../../utils/mongoose'
 import { User } from '../../models/User'
 
+//event --> 요청/응답에 관한 모든 정보가 담겨져 있는 객체
 export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event)
