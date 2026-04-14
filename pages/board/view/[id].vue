@@ -200,7 +200,7 @@ const handleDelete = async () => {
     
     if (response.success) {
       alert('게시물이 삭제되었습니다.');
-      router.push('/');
+      router.push('/board/list');
     } else {
       alert(response.error || '게시물 삭제에 실패했습니다.');
     }
