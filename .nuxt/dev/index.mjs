@@ -652,7 +652,8 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {},
-  "mongodbUri": "mongodb+srv://admin:12345@cluster0.k4k4w.mongodb.net/?appName=Cluster0"
+  "mongodbUri": "mongodb+srv://admin:12345@cluster0.k4k4w.mongodb.net/?appName=Cluster0",
+  "jwt_secret": "your-secret-key-change-this-in-production"
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -698,9 +699,9 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
   }
 });
 
-const config = useRuntimeConfig();
+const config$1 = useRuntimeConfig();
 const _routeRulesMatcher = toRouteMatcher(
-  createRouter({ routes: config.nitro.routeRules })
+  createRouter({ routes: config$1.nitro.routeRules })
 );
 function createRouteRulesHandler(ctx) {
   return eventHandler((event) => {
@@ -1544,7 +1545,8 @@ const _Wdc5LY = eventHandler((event) => {
   return readAsset(id);
 });
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const config = useRuntimeConfig();
+const JWT_SECRET = config.jwt_secret;
 const generateToken = (payload) => {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: "24h" });
 };
