@@ -4,10 +4,10 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "npx nuxt dev",
-    "build": "npx nuxt build",
-    "generate": "npx nuxt generate",
-    "preview": "npx nuxt preview"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
